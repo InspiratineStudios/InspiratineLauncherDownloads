@@ -1,10 +1,15 @@
 /* Intento 1: Paleta oscura plana con bordes estáticos */
 /* Intento 2: Ajuste de dimensiones de imagen de marca */
 /* Intento 3: Reemplazo integral a Glassmorphism con iluminación radial, refracción en bordes y efectos glow */
+/* Intento 4: Optimización tipográfica y soporte de renderizado en monitores de alta densidad */
+/* Intento 6: Alineación flex para glifos vectoriales SVG oficiales y reestructuración simétrica del menú */
+/* Intento 7: Retícula CSS Grid bifocal para hero dividido e integración de marco iluminado para launcher-preview.png */
+/* Intento 8: Eliminación de bordes claros y aumento de tamaño en logo-img, compresión de padding superior */
+/* Intento 9: Variable de calibración de altura de preview (--launcher-preview-margin-top) y estilización panorámica centrada para SmartScreen */
 :root {
   --bg-deep: #0a0c10;
   --bg-radial: radial-gradient(circle at 50% 10%, rgba(59, 130, 246, 0.18) 0%, rgba(15, 23, 42, 0) 60%),
-               radial-gradient(circle at 85% 30%, rgba(147, 51, 234, 0.12) 0%, rgba(10, 12, 16, 0) 50%);
+  radial-gradient(circle at 85% 30%, rgba(147, 51, 234, 0.12) 0%, rgba(10, 12, 16, 0) 50%);
   --glass-surface: rgba(22, 27, 38, 0.65);
   --glass-surface-hover: rgba(30, 38, 54, 0.85);
   --glass-border: rgba(255, 255, 255, 0.1);
@@ -14,6 +19,9 @@
   --primary-glow: rgba(59, 130, 246, 0.45);
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
+
+  /* Intento 9: Variable accesible para calibrar la altura de la imagen del launcher en el eje vertical */
+  --launcher-preview-margin-top: 50px;
 }
 
 * {
@@ -37,7 +45,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2.5rem;
+  padding: 0.85rem 2.5rem;
   background: rgba(10, 12, 16, 0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -50,17 +58,17 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.9rem;
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   letter-spacing: 0.5px;
 }
 
 .logo-img {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
-  border: 1px solid var(--glass-border);
+  border: none;
   object-fit: cover;
 }
 
@@ -75,6 +83,9 @@ body {
 }
 
 .nav-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   color: var(--text-muted);
   text-decoration: none;
   font-size: 0.9rem;
@@ -87,44 +98,75 @@ body {
   transform: translateY(-1px);
 }
 
+.social-svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.nav-links a:hover .social-svg {
+  transform: scale(1.15);
+}
+
 .nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   background: rgba(255, 94, 91, 0.15) !important;
   color: #ff5e5b !important;
   border: 1px solid rgba(255, 94, 91, 0.3);
   padding: 0.45rem 1rem;
   border-radius: 8px;
   font-weight: 600 !important;
-  transition: background 0.2s, border 0.2s !important;
+  transition: background 0.2s, border 0.2s, transform 0.2s !important;
 }
 
 .nav-btn:hover {
   background: #ff5e5b !important;
   color: #ffffff !important;
+  border-color: #ff5e5b !important;
 }
 
-/* Hero Section */
+/* Hero Section Bifocal */
 .hero {
   max-width: 900px;
-  margin: 5rem auto 3rem auto;
+  margin: 2rem auto 2.5rem auto;
   text-align: center;
   padding: 0 1.5rem;
+}
+
+.hero-split {
+  max-width: 1300px;
+  margin: 1.8rem auto 2.5rem auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3.5rem;
+  align-items: start;
+  text-align: left;
 }
 
 .badge-container {
   display: inline-flex;
   gap: 0.6rem;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.1rem;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.hero-split .badge-container {
+  justify-content: flex-start;
 }
 
 .badge-studio {
   background: rgba(99, 102, 241, 0.12);
   color: #818cf8;
   border: 1px solid rgba(99, 102, 241, 0.3);
-  padding: 0.35rem 0.85rem;
+  padding: 0.3rem 0.8rem;
   border-radius: 20px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.4px;
 }
@@ -133,9 +175,9 @@ body {
   background: rgba(16, 185, 129, 0.12);
   color: #34d399;
   border: 1px solid rgba(16, 185, 129, 0.3);
-  padding: 0.35rem 0.85rem;
+  padding: 0.3rem 0.8rem;
   border-radius: 20px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
 }
 
@@ -144,6 +186,11 @@ h1 {
   font-weight: 900;
   line-height: 1.15;
   margin-bottom: 1.2rem;
+}
+
+.hero-split h1 {
+  font-size: 2.85rem;
+  text-align: left;
 }
 
 .gradient-text {
@@ -159,13 +206,22 @@ h1 {
   margin: 0 auto 2.5rem auto;
 }
 
+.hero-split .subtitle {
+  margin: 0 0 2rem 0;
+  text-align: left;
+}
+
 /* Botón Principal con Efecto Glow */
 .download-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.2rem;
+}
+
+.hero-split .download-container {
+  align-items: flex-start;
 }
 
 .btn-primary {
@@ -194,13 +250,17 @@ h1 {
   color: var(--text-muted);
 }
 
-/* Tarjetas de Confianza */
+/* Indicadores de Confianza */
 .trust-badges {
   display: flex;
   justify-content: center;
   gap: 1.2rem;
   flex-wrap: wrap;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-split .trust-badges {
+  justify-content: flex-start;
 }
 
 .trust-item {
@@ -213,39 +273,136 @@ h1 {
   color: var(--text-muted);
 }
 
-/* Desplegable SmartScreen */
-.smartscreen-card {
-  max-width: 650px;
-  margin: 0 auto;
-  text-align: left;
+/* Columna de Previsualización del Launcher */
+/* Intento 9: Control de altura calibrable mediante var(--launcher-preview-margin-top) */
+.hero-preview-col {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: var(--launcher-preview-margin-top);
+}
+
+.preview-frame {
+  position: relative;
   background: var(--glass-surface);
   border: 1px solid var(--glass-border);
-  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 8px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 35px rgba(59, 130, 246, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.preview-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.75), 0 0 50px rgba(59, 130, 246, 0.4);
+  border-color: var(--glass-border-hover);
+}
+
+.preview-img {
+  width: 100%;
+  height: auto;
+  display: block;
   border-radius: 10px;
-  padding: 0.9rem 1.3rem;
-  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-summary {
-  cursor: pointer;
-  font-weight: 600;
+/* Intento 9: Sección Panorámica Centrada de SmartScreen */
+.smartscreen-section {
+  max-width: 1250px;
+  margin: 1rem auto 4.5rem auto;
+  padding: 0 2rem;
+}
+
+.smartscreen-card-horizontal {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  background: var(--glass-surface);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 1.3rem 2.8rem 2rem 2.8rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+.smartscreen-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Intento 11: Contenedor flex con separación vertical entre párrafos para eliminar el texto corrido */
+.smartscreen-intro-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.1rem;
+}
+
+.smartscreen-header h3 {
+  font-size: 1.2rem;
   color: var(--text-main);
+  font-weight: 700;
 }
 
-.smartscreen-content {
-  margin-top: 0.8rem;
+.smartscreen-icon {
+  font-size: 1.3rem;
+}
+
+.smartscreen-intro {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+.smartscreen-steps-title {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.smartscreen-steps {
+  margin-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
 }
 
-.smartscreen-content ol {
-  margin-left: 1.3rem;
-  margin-top: 0.5rem;
+.smartscreen-media-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Rejilla de Características Glassmorphic */
+.smartscreen-preview-wrapper {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.55);
+}
+
+.smartscreen-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Rejilla de Características */
 .features {
   max-width: 1100px;
-  margin: 4rem auto 6rem auto;
+  margin: 2rem auto 6rem auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
@@ -309,16 +466,59 @@ summary {
 
 .footer-links {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   color: var(--text-muted);
   text-decoration: none;
   font-size: 0.85rem;
-  transition: color 0.2s;
+  transition: color 0.2s, transform 0.2s;
 }
 
 .footer-links a:hover {
   color: var(--text-main);
+  transform: translateY(-1px);
+}
+
+.footer-links .social-svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* Responsividad en Pantallas Medianas y Móviles */
+@media (max-width: 1024px) {
+  .hero-split {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .hero-split .badge-container,
+  .hero-split .download-container,
+  .hero-split .trust-badges {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-split h1,
+  .hero-split .subtitle {
+    text-align: center;
+  }
+
+  .hero-preview-col {
+    margin-top: 0;
+  }
+
+  .smartscreen-card-horizontal {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    padding: 1.6rem;
+  }
 }

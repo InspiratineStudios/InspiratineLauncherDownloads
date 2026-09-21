@@ -1,47 +1,76 @@
-<!-- Intento 1: Plantilla inicial con enfoque en ligereza de RAM y rutas estáticas de repositorio -->
-<!-- Intento 2: Inclusión de imagotipo en el navbar y lectura de assets .exe en la API de GitHub -->
-<!-- Intento 3: Reestructuración integral orientada a modpacks, skins, capas, ecosistema Inspiratine Studios, redes sociales completas y diseño glassmorphism -->
+<!-- Intento 1: Estructura base orientada a métricas de memoria RAM y URLs estáticas -->
+<!-- Intento 2: Inclusión de isotipo de marca logo.jpg y filtrado dinámico de asset .exe en GitHub API -->
+<!-- Intento 3: Rediseño visual glassmorphic, enfoque en modpacks, skins, capas y autenticación Microsoft -->
+<!-- Intento 4: Vinculación de redes canónicas oficiales (YouTube, X, Discord, Ko-Fi) -->
+<!-- Intento 5: Migración de formato de isotipo a logo.png con canal alfa -->
+<!-- Intento 6: Eliminación de botones Modpacks/Personalización e inserción de vectores SVG oficiales en navbar y footer -->
+<!-- Intento 7: Reestructuración asimétrica en dos columnas para integrar preview real del software (launcher-preview.png) -->
+<!-- Intento 8: Ajuste de espaciados superiores, elevación de captura del launcher y ampliación sin bordes de logo.png -->
+<!-- Intento 9: Conversión del aviso de Windows SmartScreen en tarjeta horizontal fija (sin colapsar) y desacople del Hero -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inspiratine Launcher | Descarga Oficial</title>
-  <link rel="icon" type="image/jpeg" href="logo.jpg">
+  <link rel="icon" type="image/png" href="logo.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Navegación Glassmorphic -->
-  <header class="navbar">
-    <div class="logo">
-      <img src="logo.jpg" alt="Inspiratine Launcher Logo" class="logo-img">
-      <span class="logo-title">Inspiratine<span class="accent-text">Launcher</span></span>
-    </div>
-    <nav class="nav-links">
-      <a href="#modpacks">Modpacks</a>
-      <a href="#personalizacion">Personalización</a>
-      <a href="https://youtube.com/@TU_CANAL" target="_blank" class="social-link" title="Canal de YouTube">📺 YouTube</a>
-      <a href="https://twitter.com/TU_TWITTER" target="_blank" class="social-link" title="Perfil de X / Twitter">𝕏 Twitter</a>
-      <a href="https://discord.gg/TU_DISCORD" target="_blank" class="social-link" title="Servidor de Discord">💬 Discord</a>
-      <a href="https://ko-fi.com/TU_KOFI" target="_blank" class="nav-btn">☕ Apoyar en Ko-Fi</a>
-    </nav>
-  </header>
+<!-- Navegación Glassmorphic -->
+<header class="navbar">
+  <div class="logo">
+    <img src="logo.png" alt="Inspiratine Launcher Logo" class="logo-img">
+    <span class="logo-title">Inspiratine<span class="accent-text">Launcher</span></span>
+  </div>
+  <nav class="nav-links">
+    <a href="https://www.youtube.com/@NeizerDagenhartResources" target="_blank" class="social-link" title="Canal Oficial de YouTube">
+      <svg class="social-svg" viewBox="0 0 24 24">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+      <span>YouTube</span>
+    </a>
 
-  <!-- Hero Section -->
-  <main class="hero">
+    <a href="https://x.com/Inspiratine" target="_blank" class="social-link" title="Cuenta Oficial de X">
+      <svg class="social-svg" viewBox="0 0 24 24">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+      <span>Twitter</span>
+    </a>
+
+    <a href="https://discord.gg/5swwBF8PNy" target="_blank" class="social-link" title="Comunidad de Discord">
+      <svg class="social-svg" viewBox="0 0 24 24">
+        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+      </svg>
+      <span>Discord</span>
+    </a>
+
+    <a href="https://ko-fi.com/neizerdagenhart" target="_blank" class="nav-btn">
+      <svg class="social-svg" viewBox="0 0 24 24">
+        <path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.683-2.566l.044-1.614s2.803.224 4.881-1.2c2.148-1.474 2.378-3.791 2.378-3.791s.389-1.479-.691-1.479zm-4.73 4.296c-.846.59-1.926.47-1.926.47l-.02-3.864s1.171-.067 1.954.408c.846.514.838 2.396-.008 2.986zm-8.08 1.488c-2.032-1.91-4.073-4.103-4.073-5.59 0-1.042.842-1.886 1.884-1.886.666 0 1.255.347 1.593.876.337-.529.927-.876 1.593-.876 1.042 0 1.884.844 1.884 1.886 0 1.487-2.04 3.68-4.073 5.59-.283.266-.723.266-1.006 0z"/>
+      </svg>
+      <span>Apoyar en Ko-Fi</span>
+    </a>
+  </nav>
+</header>
+
+<!-- Hero Section Bifocal -->
+<main class="hero hero-split">
+  <!-- Columna Izquierda: Información de Software y Descargas -->
+  <div class="hero-text-col">
     <div class="badge-container">
       <span class="badge-studio">Inspiratine Studios</span>
       <span class="badge-status" id="version-tag">Consultando versión...</span>
     </div>
 
-    <h1>Tu universo Minecraft, <br><span class="gradient-text">sin límites técnicos</span></h1>
+    <h1>Bienvenido al universo <br><span class="gradient-text">Inspiratine Studios</span></h1>
     <p class="subtitle">
-      Gestiona mods y modpacks fácilmente, personaliza tu carrusel de skins y luce tus capas exclusivas. 
+      Gestiona mods y modpacks fácilmente, personaliza tu carrusel de skins y luce tus capas exclusivas.
       Autenticación oficial de Microsoft y conexión directa al ecosistema de nuestro estudio.
     </p>
 
-    <!-- Contenedor Principal de Descarga -->
+    <!-- Enlace Dinámico de Descarga -->
     <div class="download-container">
       <a id="download-btn" href="https://github.com/InspiratineStudios/InspiratineLauncher/releases/latest" class="btn-primary">
         <span class="btn-icon">⬇</span> Descargar Inspiratine Launcher
@@ -49,120 +78,170 @@
       <span class="file-info" id="release-date">Compatible con Windows 10 / 11 (64-bit)</span>
     </div>
 
-    <!-- Puntos Clave de Confianza -->
+    <!-- Indicadores de Funcionalidad Clave -->
     <div class="trust-badges">
       <div class="trust-item"><span>🔐</span> Cuenta Oficial Microsoft</div>
       <div class="trust-item"><span>📦</span> Modpacks & Mods en 1-Clic</div>
       <div class="trust-item"><span>🎨</span> Carrusel de Skins & Capas</div>
       <div class="trust-item"><span>🛡️</span> 0/70 en VirusTotal</div>
     </div>
+  </div>
 
-    <!-- Acordeón Informativo de Windows SmartScreen -->
-    <div class="smartscreen-card">
-      <details>
-        <summary>ℹ️ ¿Windows muestra la alerta de "Windows protegió su PC"?</summary>
-        <div class="smartscreen-content">
-          <p>Al ser un software independiente nuevo sin certificado comercial corporativo de pago, SmartScreen puede mostrar una advertencia preventiva:</p>
-          <ol>
-            <li>Haz clic en <strong>"Más información"</strong> en la ventana azul de advertencia.</li>
-            <li>Selecciona el botón <strong>"Ejecutar de todas formas"</strong>.</li>
-            <li>El instalador es de código abierto, verificado y completamente limpio de amenazas.</li>
-          </ol>
-        </div>
-      </details>
+  <!-- Columna Derecha: Mockup Glassmorphic del Software -->
+  <div class="hero-preview-col">
+    <div class="preview-frame">
+      <img src="launcher-preview.png" alt="Interfaz Gráfica de Inspiratine Launcher" class="preview-img">
     </div>
-  </main>
+  </div>
+</main>
 
-  <!-- Grilla de Características Glassmorphism -->
-  <section class="features" id="modpacks">
-    <div class="card glass-card">
-      <div class="card-icon">📦</div>
-      <h3>Gestor de Mods y Modpacks</h3>
-      <p>Instala, actualiza y organiza tus perfiles de juego en segundos. Compatibilidad completa y aislamiento total entre versiones.</p>
-    </div>
+<!-- Intento 9: Sección Horizontal Centrada para el Aviso y Guía de Windows SmartScreen (Siempre Visible) -->
+<section class="smartscreen-section">
+  <div class="smartscreen-card-horizontal">
+    <div class="smartscreen-info-col">
+      <div class="smartscreen-header">
+        <span class="smartscreen-icon">ℹ️</span>
+        <h3>¿Windows muestra la alerta azul de "Windows protegió su PC"?</h3>
+      </div>
+      <div class="smartscreen-intro-group">
+        <p class="smartscreen-intro">
+          <strong>¿Por qué ocurre esto?</strong> Microsoft Defender SmartScreen clasifica preventivamente como "desconocido" a cualquier software independiente que aún no cuente con un certificado comercial corporativo de alto costo anual o un volumen masivo de descargas previas.
+        </p>
+        <p class="smartscreen-intro">
+          <em>Inspiratine Launcher es un proyecto creado, desarrollado y mantenido con dedicación por una sola persona bajo Inspiratine Studios, con el anhelo de construir la mejor herramienta para ustedes y poder vivir de lo que los jugadores decidan apoyar voluntariamente en estos proyectos.</em>
+        </p>
+        <p class="smartscreen-intro">
+          El cliente es 100% transparente, seguro y completamente libre de amenazas.
+        </p>
+      </div>
 
-    <div class="card glass-card" id="personalizacion">
-      <div class="card-icon">👤</div>
-      <h3>Carrusel de Skins y Capas</h3>
-      <p>Administra tu guardarropa de skins con visualización dinámica y equipa tus capas oficiales y exclusivas de Inspiratine Studios.</p>
-    </div>
-
-    <div class="card glass-card">
-      <div class="card-icon">🔐</div>
-      <h3>Autenticación Oficial Microsoft</h3>
-      <p>Acceso nativo mediante OAuth 2.0 directo con los servidores de Microsoft y Xbox Live, blindado localmente con cifrado DPAPI.</p>
-    </div>
-
-    <div class="card glass-card">
-      <div class="card-icon">⚡</div>
-      <h3>Tecnología LinkManager NTFS</h3>
-      <p>Comparte bibliotecas y recursos comunes entre múltiples instancias sin desperdiciar gigabytes redundantes en tu almacenamiento.</p>
+      <p class="smartscreen-steps-title"><strong>Pasos para continuar con la instalación:</strong></p>
+      <ol class="smartscreen-steps">
+        <li>Haz clic en el enlace subrayado <strong>"Más información"</strong> en la ventana azul de Windows.</li>
+        <li>Aparecerá un botón en la esquina inferior derecha: pulsa <strong>"Ejecutar de todas formas"</strong>.</li>
+        <li>El instalador abrirá inmediatamente el asistente sin restricciones del sistema.</li>
+      </ol>
     </div>
 
-    <div class="card glass-card">
-      <div class="card-icon">🌐</div>
-      <h3>Ecosistema Inspiratine Studios</h3>
-      <p>Integración directa con nuestros eventos comunitarios, servidores oficiales y contenidos exclusivos desarrollados por el estudio.</p>
-    </div>
-
-    <div class="card glass-card">
-      <div class="card-icon">🔄</div>
-      <h3>Actualizaciones Automáticas</h3>
-      <p>Descarga directa y transparente de nuevas mejoras mediante GitHub Releases sin necesidad de reinstalar manualmente.</p>
-    </div>
-  </section>
-
-  <!-- Pie de Página -->
-  <footer class="footer">
-    <div class="footer-content">
-      <p class="footer-copy">© 2026 <strong>Inspiratine Studios</strong>. Todos los derechos reservados.</p>
-      <div class="footer-links">
-        <a href="https://youtube.com/@TU_CANAL" target="_blank">YouTube</a>
-        <a href="https://twitter.com/TU_TWITTER" target="_blank">Twitter / X</a>
-        <a href="https://discord.gg/TU_DISCORD" target="_blank">Discord</a>
-        <a href="https://ko-fi.com/TU_KOFI" target="_blank">Ko-Fi</a>
+    <div class="smartscreen-media-col">
+      <div class="smartscreen-preview-wrapper">
+        <img src="smartscreen-guide.png" alt="Captura explicativa de advertencia de Windows SmartScreen" class="smartscreen-img">
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- Script de Enlace Automático a GitHub Releases -->
-  <script>
-    // Intento 1: Consulta inicial a repositorio local con nombre fijo de ejecutable
-    // Intento 2: Redirección hacia el repositorio de compilación InspiratineLauncher con filtrado de asset .exe
-    // Intento 3: Formateo estricto de fecha, logs con trazabilidad de origen y enlace automático resiliente
-    const USER = 'InspiratineStudios';
-    const REPO = 'InspiratineLauncher';
+<!-- Características del Software -->
+<section class="features" id="modpacks">
+  <div class="card glass-card">
+    <div class="card-icon">📦</div>
+    <h3>Gestor de Mods y Modpacks</h3>
+    <p>Instala, actualiza y organiza tus perfiles de juego en segundos. Compatibilidad completa y aislamiento total entre versiones.</p>
+  </div>
 
-    console.log('[DEBUG index.html#fetchRelease()]: Conectando a GitHub API para consultar último release de ' + USER + '/' + REPO + '...');
-    fetch(`https://api.github.com/repos/${USER}/${REPO}/releases/latest`)
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(`HTTP ${res.status}`);
-        }
-        return res.json();
-      })
-      .then(data => {
-        console.log('[DEBUG index.html#fetchRelease()]: Tag detectado: ' + data.tag_name);
-        document.getElementById('version-tag').innerText = `Versión Oficial: ${data.tag_name}`;
-        
-        const fecha = new Date(data.published_at).toLocaleDateString('es-ES', { 
-          year: 'numeric', 
-          month: 'long', 
-          day: 'numeric' 
-        });
-        document.getElementById('release-date').innerText = `Versión ${data.tag_name} publicada el ${fecha} • Windows (64-bit)`;
+  <div class="card glass-card" id="personalizacion">
+    <div class="card-icon">👤</div>
+    <h3>Carrusel de Skins y Capas</h3>
+    <p>Administra tu guardarropa de skins con visualización dinámica y equipa tus capas oficiales y exclusivas de Inspiratine Studios.</p>
+  </div>
 
-        const exeAsset = data.assets && data.assets.find(asset => asset.name.toLowerCase().endsWith('.exe'));
-        const downloadBtn = document.getElementById('download-btn');
-        if (exeAsset && downloadBtn) {
-          console.log('[DEBUG index.html#fetchRelease()]: Asset de descarga configurado dinámicamente -> ' + exeAsset.browser_download_url);
-          downloadBtn.href = exeAsset.browser_download_url;
-        }
-      })
-      .catch(err => {
-        console.warn('[DEBUG index.html#fetchRelease()]: GitHub API no disponible o rate limit activo. Utilizando fallback estático. Error:', err);
-        document.getElementById('version-tag').innerText = `Última Versión Estable`;
-      });
-  </script>
+  <div class="card glass-card">
+    <div class="card-icon">🔐</div>
+    <h3>Autenticación Oficial Microsoft</h3>
+    <p>Acceso nativo mediante OAuth 2.0 directo con los servidores de Microsoft y Xbox Live, blindado localmente con cifrado DPAPI.</p>
+  </div>
+
+  <div class="card glass-card">
+    <div class="card-icon">⚡</div>
+    <h3>Tecnología LinkManager NTFS</h3>
+    <p>Comparte bibliotecas y recursos comunes entre múltiples instancias sin desperdiciar gigabytes redundantes en tu almacenamiento.</p>
+  </div>
+
+  <div class="card glass-card">
+    <div class="card-icon">🌐</div>
+    <h3>Ecosistema Inspiratine Studios</h3>
+    <p>Integración directa con nuestros eventos comunitarios, servidores oficiales y contenidos exclusivos desarrollados por el estudio.</p>
+  </div>
+
+  <div class="card glass-card">
+    <div class="card-icon">🔄</div>
+    <h3>Actualizaciones Automáticas</h3>
+    <p>Descarga directa y transparente de nuevas mejoras mediante GitHub Releases sin necesidad de reinstalar manualmente.</p>
+  </div>
+</section>
+
+<!-- Pie de Página -->
+<footer class="footer">
+  <div class="footer-content">
+    <p class="footer-copy">© 2026 <strong>Inspiratine Studios</strong>. Todos los derechos reservados.</p>
+    <div class="footer-links">
+      <a href="https://www.youtube.com/@NeizerDagenhartResources" target="_blank" title="YouTube">
+        <svg class="social-svg" viewBox="0 0 24 24">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+        <span>YouTube</span>
+      </a>
+      <a href="https://x.com/Inspiratine" target="_blank" title="Twitter / X">
+        <svg class="social-svg" viewBox="0 0 24 24">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+        <span>Twitter</span>
+      </a>
+      <a href="https://discord.gg/5swwBF8PNy" target="_blank" title="Discord">
+        <svg class="social-svg" viewBox="0 0 24 24">
+          <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+        </svg>
+        <span>Discord</span>
+      </a>
+      <a href="https://ko-fi.com/neizerdagenhart" target="_blank" title="Ko-Fi">
+        <svg class="social-svg" viewBox="0 0 24 24">
+          <path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.683-2.566l.044-1.614s2.803.224 4.881-1.2c2.148-1.474 2.378-3.791 2.378-3.791s.389-1.479-.691-1.479zm-4.73 4.296c-.846.59-1.926.47-1.926.47l-.02-3.864s1.171-.067 1.954.408c.846.514.838 2.396-.008 2.986zm-8.08 1.488c-2.032-1.91-4.073-4.103-4.073-5.59 0-1.042.842-1.886 1.884-1.886.666 0 1.255.347 1.593.876.337-.529.927-.876 1.593-.876 1.042 0 1.884.844 1.884 1.886 0 1.487-2.04 3.68-4.073 5.59-.283.266-.723.266-1.006 0z"/>
+        </svg>
+        <span>Ko-Fi</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- Script de Enlace Automático a GitHub Releases -->
+<script>
+  // Intento 1: Conexión básica y extracción por tag estático
+  // Intento 2: Redirección al repositorio InspiratineLauncher y búsqueda selectiva del asset ejecutable .exe
+  // Intento 3: Formateo de fecha localizada y depuración estructurada
+  // Intento 4: Validación de variables de entorno de producción
+  const USER = 'InspiratineStudios';
+  const REPO = 'InspiratineLauncher';
+
+  console.log('[DEBUG index.html#fetchRelease()]: Consultando GitHub Releases para ' + USER + '/' + REPO + '...');
+  fetch(`https://api.github.com/repos/${USER}/${REPO}/releases/latest`)
+          .then(res => {
+            if (!res.ok) {
+              throw new Error(`HTTP ${res.status}`);
+            }
+            return res.json();
+          })
+          .then(data => {
+            console.log('[DEBUG index.html#fetchRelease()]: Tag recibido exitosamente: ' + data.tag_name);
+            document.getElementById('version-tag').innerText = `Versión Oficial: ${data.tag_name}`;
+
+            const fecha = new Date(data.published_at).toLocaleDateString('es-ES', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            });
+            document.getElementById('release-date').innerText = `Versión ${data.tag_name} publicada el ${fecha} • Windows (64-bit)`;
+
+            const exeAsset = data.assets && data.assets.find(asset => asset.name.toLowerCase().endsWith('.exe'));
+            const downloadBtn = document.getElementById('download-btn');
+            if (exeAsset && downloadBtn) {
+              console.log('[DEBUG index.html#fetchRelease()]: Enlace dinámico asignado -> ' + exeAsset.browser_download_url);
+              downloadBtn.href = exeAsset.browser_download_url;
+            }
+          })
+          .catch(err => {
+            console.warn('[DEBUG index.html#fetchRelease()]: GitHub API rate limit o fallo de red. Aplicando fallback. Error:', err);
+            document.getElementById('version-tag').innerText = `Última Versión Estable`;
+          });
+</script>
 </body>
 </html>
