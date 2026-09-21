@@ -1,99 +1,139 @@
+<!-- Intento 1: Plantilla inicial con enfoque en ligereza de RAM y rutas estáticas de repositorio -->
+<!-- Intento 2: Inclusión de imagotipo en el navbar y lectura de assets .exe en la API de GitHub -->
+<!-- Intento 3: Reestructuración integral orientada a modpacks, skins, capas, ecosistema Inspiratine Studios, redes sociales completas y diseño glassmorphism -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inspiratine Launcher | Descarga Oficial</title>
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Encabezado y Navegación -->
+  <!-- Navegación Glassmorphic -->
   <header class="navbar">
-    <div class="logo">⚡ Inspiratine Launcher</div>
-    <nav>
-      <a href="#caracteristicas">Ventajas</a>
-      <a href="https://discord.gg/TU_DISCORD" target="_blank">Discord</a>
-      <a href="https://ko-fi.com/TU_KOFI" target="_blank" class="nav-btn">Apoyar en Ko-Fi</a>
+    <div class="logo">
+      <img src="logo.jpg" alt="Inspiratine Launcher Logo" class="logo-img">
+      <span class="logo-title">Inspiratine<span class="accent-text">Launcher</span></span>
+    </div>
+    <nav class="nav-links">
+      <a href="#modpacks">Modpacks</a>
+      <a href="#personalizacion">Personalización</a>
+      <a href="https://youtube.com/@TU_CANAL" target="_blank" class="social-link" title="Canal de YouTube">📺 YouTube</a>
+      <a href="https://twitter.com/TU_TWITTER" target="_blank" class="social-link" title="Perfil de X / Twitter">𝕏 Twitter</a>
+      <a href="https://discord.gg/TU_DISCORD" target="_blank" class="social-link" title="Servidor de Discord">💬 Discord</a>
+      <a href="https://ko-fi.com/TU_KOFI" target="_blank" class="nav-btn">☕ Apoyar en Ko-Fi</a>
     </nav>
   </header>
 
-  <!-- Sección Principal (Hero) -->
+  <!-- Hero Section -->
   <main class="hero">
-    <div class="badge-status" id="version-tag">Cargando última versión...</div>
-    <h1>Juega Minecraft sin fricción técnica</h1>
+    <div class="badge-container">
+      <span class="badge-studio">Inspiratine Studios</span>
+      <span class="badge-status" id="version-tag">Consultando versión...</span>
+    </div>
+
+    <h1>Tu universo Minecraft, <br><span class="gradient-text">sin límites técnicos</span></h1>
     <p class="subtitle">
-      El cliente nativo ultra ligero diseñado para rendir al máximo: ~353 MB de RAM, 
-      cero duplicación en disco con enlaces duros NTFS y conexión directa en 1 clic.
+      Gestiona mods y modpacks fácilmente, personaliza tu carrusel de skins y luce tus capas exclusivas. 
+      Autenticación oficial de Microsoft y conexión directa al ecosistema de nuestro estudio.
     </p>
 
-    <!-- Botón Principal de Descarga -->
+    <!-- Contenedor Principal de Descarga -->
     <div class="download-container">
-<a id="download-btn" href="https://github.com/InspiratineStudios/InspiratineLauncherDownloads/releases/latest/download/InspiratineLauncher-Setup.exe" class="btn-primary">        ⬇ Descargar para Windows (Instalador)
+      <a id="download-btn" href="https://github.com/InspiratineStudios/InspiratineLauncher/releases/latest" class="btn-primary">
+        <span class="btn-icon">⬇</span> Descargar Inspiratine Launcher
       </a>
       <span class="file-info" id="release-date">Compatible con Windows 10 / 11 (64-bit)</span>
     </div>
 
-    <!-- Indicadores de Seguridad y Confianza -->
+    <!-- Puntos Clave de Confianza -->
     <div class="trust-badges">
-      <span>🛡️ Análisis 0/70 en VirusTotal</span>
-      <span>🔒 Cifrado DPAPI en Kernel</span>
-      <span>⚡ Actualizaciones automáticas</span>
+      <div class="trust-item"><span>🔐</span> Cuenta Oficial Microsoft</div>
+      <div class="trust-item"><span>📦</span> Modpacks & Mods en 1-Clic</div>
+      <div class="trust-item"><span>🎨</span> Carrusel de Skins & Capas</div>
+      <div class="trust-item"><span>🛡️</span> 0/70 en VirusTotal</div>
     </div>
 
-    <!-- Advertencia SmartScreen -->
+    <!-- Acordeón Informativo de Windows SmartScreen -->
     <div class="smartscreen-card">
       <details>
-        <summary>ℹ️ ¿Windows muestra la pantalla azul de "Windows protegió su PC"?</summary>
+        <summary>ℹ️ ¿Windows muestra la alerta de "Windows protegió su PC"?</summary>
         <div class="smartscreen-content">
-          <p>Al ser un software independiente nuevo sin certificado corporativo de pago, Windows SmartScreen puede mostrar una advertencia preventiva.</p>
+          <p>Al ser un software independiente nuevo sin certificado comercial corporativo de pago, SmartScreen puede mostrar una advertencia preventiva:</p>
           <ol>
-            <li>Haz clic en <strong>"Más información"</strong> en la ventana azul.</li>
-            <li>Selecciona <strong>"Ejecutar de todas formas"</strong>.</li>
-            <li>El instalador está completamente limpio y verificado contra virus.</li>
+            <li>Haz clic en <strong>"Más información"</strong> en la ventana azul de advertencia.</li>
+            <li>Selecciona el botón <strong>"Ejecutar de todas formas"</strong>.</li>
+            <li>El instalador es de código abierto, verificado y completamente limpio de amenazas.</li>
           </ol>
         </div>
       </details>
     </div>
   </main>
 
-  <!-- Tarjetas de Características -->
-  <section class="features" id="caracteristicas">
-    <div class="card">
-      <h3>🚀 Rendimiento Nativo</h3>
-      <p>Construido en JavaFX optimizado. Apenas ~353 MB de memoria y arranque sin pantallas negras ni sobrecarga.</p>
+  <!-- Grilla de Características Glassmorphism -->
+  <section class="features" id="modpacks">
+    <div class="card glass-card">
+      <div class="card-icon">📦</div>
+      <h3>Gestor de Mods y Modpacks</h3>
+      <p>Instala, actualiza y organiza tus perfiles de juego en segundos. Compatibilidad completa y aislamiento total entre versiones.</p>
     </div>
-    <div class="card">
-      <h3>📁 Enlaces Duros NTFS</h3>
-      <p>Tecnología LinkManager: comparte mods entre perfiles sin duplicar gigabytes en tu disco duro.</p>
+
+    <div class="card glass-card" id="personalizacion">
+      <div class="card-icon">👤</div>
+      <h3>Carrusel de Skins y Capas</h3>
+      <p>Administra tu guardarropa de skins con visualización dinámica y equipa tus capas oficiales y exclusivas de Inspiratine Studios.</p>
     </div>
-    <div class="card">
-      <h3>🔐 Seguridad Máxima</h3>
-      <p>Inicio de sesión oficial Microsoft OAuth 2.0 protegido con cifrado DPAPI directo en el sistema.</p>
+
+    <div class="card glass-card">
+      <div class="card-icon">🔐</div>
+      <h3>Autenticación Oficial Microsoft</h3>
+      <p>Acceso nativo mediante OAuth 2.0 directo con los servidores de Microsoft y Xbox Live, blindado localmente con cifrado DPAPI.</p>
     </div>
-    <div class="card">
-      <h3>🌐 Ecosistema Zyvralys</h3>
-      <p>Entra a tu servidor favorito en un solo clic con mecánicas exclusivas sincronizadas.</p>
+
+    <div class="card glass-card">
+      <div class="card-icon">⚡</div>
+      <h3>Tecnología LinkManager NTFS</h3>
+      <p>Comparte bibliotecas y recursos comunes entre múltiples instancias sin desperdiciar gigabytes redundantes en tu almacenamiento.</p>
+    </div>
+
+    <div class="card glass-card">
+      <div class="card-icon">🌐</div>
+      <h3>Ecosistema Inspiratine Studios</h3>
+      <p>Integración directa con nuestros eventos comunitarios, servidores oficiales y contenidos exclusivos desarrollados por el estudio.</p>
+    </div>
+
+    <div class="card glass-card">
+      <div class="card-icon">🔄</div>
+      <h3>Actualizaciones Automáticas</h3>
+      <p>Descarga directa y transparente de nuevas mejoras mediante GitHub Releases sin necesidad de reinstalar manualmente.</p>
     </div>
   </section>
 
-  <footer>
-    <p>© 2026 Inspiratine Studios. Desarrollado de forma independiente.</p>
+  <!-- Pie de Página -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-copy">© 2026 <strong>Inspiratine Studios</strong>. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <a href="https://youtube.com/@TU_CANAL" target="_blank">YouTube</a>
+        <a href="https://twitter.com/TU_TWITTER" target="_blank">Twitter / X</a>
+        <a href="https://discord.gg/TU_DISCORD" target="_blank">Discord</a>
+        <a href="https://ko-fi.com/TU_KOFI" target="_blank">Ko-Fi</a>
+      </div>
+    </div>
   </footer>
 
-  <!-- Script de consulta de versión y fecha con GitHub API -->
+  <!-- Script de Enlace Automático a GitHub Releases -->
   <script>
-    // Intento 1: Asignación de credenciales públicas del repositorio detectado InspiratineStudios/InspiratineLauncherDownloads
+    // Intento 1: Consulta inicial a repositorio local con nombre fijo de ejecutable
+    // Intento 2: Redirección hacia el repositorio de compilación InspiratineLauncher con filtrado de asset .exe
+    // Intento 3: Formateo estricto de fecha, logs con trazabilidad de origen y enlace automático resiliente
     const USER = 'InspiratineStudios';
-    const REPO = 'InspiratineLauncherDownloads';
-    const ASSET_NAME = 'InspiratineLauncher-Setup.exe';
+    const REPO = 'InspiratineLauncher';
 
-    const downloadBtn = document.getElementById('download-btn');
-    if (downloadBtn && USER !== 'TU_USUARIO' && REPO !== 'TU_REPO_LAUNCHER') {
-      downloadBtn.href = `https://github.com/${USER}/${REPO}/releases/latest/download/${ASSET_NAME}`;
-    }
-
-    console.log('[DEBUG index.html#fetchRelease()]: Consultando última versión en GitHub API...');
+    console.log('[DEBUG index.html#fetchRelease()]: Conectando a GitHub API para consultar último release de ' + USER + '/' + REPO + '...');
     fetch(`https://api.github.com/repos/${USER}/${REPO}/releases/latest`)
       .then(res => {
         if (!res.ok) {
@@ -102,13 +142,25 @@
         return res.json();
       })
       .then(data => {
-        console.log('[DEBUG index.html#fetchRelease()]: Versión recuperada: ' + data.tag_name);
-        document.getElementById('version-tag').innerText = `Versión Estable: ${data.tag_name}`;
-        const fecha = new Date(data.published_at).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+        console.log('[DEBUG index.html#fetchRelease()]: Tag detectado: ' + data.tag_name);
+        document.getElementById('version-tag').innerText = `Versión Oficial: ${data.tag_name}`;
+        
+        const fecha = new Date(data.published_at).toLocaleDateString('es-ES', { 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        });
         document.getElementById('release-date').innerText = `Versión ${data.tag_name} publicada el ${fecha} • Windows (64-bit)`;
+
+        const exeAsset = data.assets && data.assets.find(asset => asset.name.toLowerCase().endsWith('.exe'));
+        const downloadBtn = document.getElementById('download-btn');
+        if (exeAsset && downloadBtn) {
+          console.log('[DEBUG index.html#fetchRelease()]: Asset de descarga configurado dinámicamente -> ' + exeAsset.browser_download_url);
+          downloadBtn.href = exeAsset.browser_download_url;
+        }
       })
       .catch(err => {
-        console.warn('[DEBUG index.html#fetchRelease()]: Falló la consulta a GitHub API. Aplicando fallback estático. Motivo:', err);
+        console.warn('[DEBUG index.html#fetchRelease()]: GitHub API no disponible o rate limit activo. Utilizando fallback estático. Error:', err);
         document.getElementById('version-tag').innerText = `Última Versión Estable`;
       });
   </script>
