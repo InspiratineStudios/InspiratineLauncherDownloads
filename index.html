@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inspiratine Launcher | Descarga Oficial</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Encabezado y Navegación -->
+  <header class="navbar">
+    <div class="logo">⚡ Inspiratine Launcher</div>
+    <nav>
+      <a href="#caracteristicas">Ventajas</a>
+      <a href="https://discord.gg/TU_DISCORD" target="_blank">Discord</a>
+      <a href="https://ko-fi.com/TU_KOFI" target="_blank" class="nav-btn">Apoyar en Ko-Fi</a>
+    </nav>
+  </header>
+
+  <!-- Sección Principal (Hero) -->
+  <main class="hero">
+    <div class="badge-status" id="version-tag">Cargando última versión...</div>
+    <h1>Juega Minecraft sin fricción técnica</h1>
+    <p class="subtitle">
+      El cliente nativo ultra ligero diseñado para rendir al máximo: ~353 MB de RAM, 
+      cero duplicación en disco con enlaces duros NTFS y conexión directa en 1 clic.
+    </p>
+
+    <!-- Botón Principal de Descarga -->
+    <div class="download-container">
+      <a id="download-btn" href="https://github.com/TU_USUARIO/TU_REPO_LAUNCHER/releases/latest/download/InspiratineLauncher-Setup.exe" class="btn-primary">
+        ⬇ Descargar para Windows (Instalador)
+      </a>
+      <span class="file-info" id="release-date">Compatible con Windows 10 / 11 (64-bit)</span>
+    </div>
+
+    <!-- Indicadores de Seguridad y Confianza -->
+    <div class="trust-badges">
+      <span>🛡️ Análisis 0/70 en VirusTotal</span>
+      <span>🔒 Cifrado DPAPI en Kernel</span>
+      <span>⚡ Actualizaciones automáticas</span>
+    </div>
+
+    <!-- Advertencia SmartScreen -->
+    <div class="smartscreen-card">
+      <details>
+        <summary>ℹ️ ¿Windows muestra la pantalla azul de "Windows protegió su PC"?</summary>
+        <div class="smartscreen-content">
+          <p>Al ser un software independiente nuevo sin certificado corporativo de pago, Windows SmartScreen puede mostrar una advertencia preventiva.</p>
+          <ol>
+            <li>Haz clic en <strong>"Más información"</strong> en la ventana azul.</li>
+            <li>Selecciona <strong>"Ejecutar de todas formas"</strong>.</li>
+            <li>El instalador está completamente limpio y verificado contra virus.</li>
+          </ol>
+        </div>
+      </details>
+    </div>
+  </main>
+
+  <!-- Tarjetas de Características -->
+  <section class="features" id="caracteristicas">
+    <div class="card">
+      <h3>🚀 Rendimiento Nativo</h3>
+      <p>Construido en JavaFX optimizado. Apenas ~353 MB de memoria y arranque sin pantallas negras ni sobrecarga.</p>
+    </div>
+    <div class="card">
+      <h3>📁 Enlaces Duros NTFS</h3>
+      <p>Tecnología LinkManager: comparte mods entre perfiles sin duplicar gigabytes en tu disco duro.</p>
+    </div>
+    <div class="card">
+      <h3>🔐 Seguridad Máxima</h3>
+      <p>Inicio de sesión oficial Microsoft OAuth 2.0 protegido con cifrado DPAPI directo en el sistema.</p>
+    </div>
+    <div class="card">
+      <h3>🌐 Ecosistema Zyvralys</h3>
+      <p>Entra a tu servidor favorito en un solo clic con mecánicas exclusivas sincronizadas.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Inspiratine Studios. Desarrollado de forma independiente.</p>
+  </footer>
+
+  <!-- Script de consulta de versión y fecha con GitHub API -->
+  <script>
+    // Intento 1: Manejo centralizado de constantes de despliegue y trazabilidad por consola
+    const USER = 'TU_USUARIO';
+    const REPO = 'TU_REPO_LAUNCHER';
+    const ASSET_NAME = 'InspiratineLauncher-Setup.exe';
+
+    const downloadBtn = document.getElementById('download-btn');
+    if (downloadBtn && USER !== 'TU_USUARIO' && REPO !== 'TU_REPO_LAUNCHER') {
+      downloadBtn.href = `https://github.com/${USER}/${REPO}/releases/latest/download/${ASSET_NAME}`;
+    }
+
+    console.log('[DEBUG index.html#fetchRelease()]: Consultando última versión en GitHub API...');
+    fetch(`https://api.github.com/repos/${USER}/${REPO}/releases/latest`)
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+        return res.json();
+      })
+      .then(data => {
+        console.log('[DEBUG index.html#fetchRelease()]: Versión recuperada: ' + data.tag_name);
+        document.getElementById('version-tag').innerText = `Versión Estable: ${data.tag_name}`;
+        const fecha = new Date(data.published_at).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+        document.getElementById('release-date').innerText = `Versión ${data.tag_name} publicada el ${fecha} • Windows (64-bit)`;
+      })
+      .catch(err => {
+        console.warn('[DEBUG index.html#fetchRelease()]: Falló la consulta a GitHub API. Aplicando fallback estático. Motivo:', err);
+        document.getElementById('version-tag').innerText = `Última Versión Estable`;
+      });
+  </script>
+</body>
+</html>
